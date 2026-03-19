@@ -282,3 +282,37 @@ body {
     color: whitesmoke;
     background: blue;
 }
+
+/* Temporary About Page*/
+
+.about-backbtn-text {
+    display: block;
+    text-align: center;
+    color: blue;
+}
+
+.about-backbtn {
+    text-decoration: none;
+    color: chartreuse;
+    background: black;
+    padding: 5px;
+    border-radius: 20px;
+    margin: 5px;
+}
+
+/* Footer */
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    margin: 90px;
+    width: auto;
+}
+
+.footer-description {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 15px;
+}
