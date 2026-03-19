@@ -227,6 +227,7 @@ body {
     display: flex;
     flex-direction: column;
     border: none;
+    padding: 10px 20px;
 }
 
 .about-title {
