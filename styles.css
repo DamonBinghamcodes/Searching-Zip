@@ -224,15 +224,25 @@ body.dark {
 
 /* Theme Toggle Dark Mode */
 
-#theme-toggle {
+.theme-toggle {
   display: flex;
   justify-content: center;
+  padding: 5px;
+}
+
+#theme-toggle {
+  display: flex;
+  justify-content: flex-end;
   padding: 10px;
-  font-size: 30px;
+  font-size: 60px;
   border: none;
   background: none;
-  margin-top: 0;
+  margin: 5px auto;
   transition: 0.5s ease;
+}
+
+.fa-power-off {
+  display: flex;
 }
 
 #theme-toggle:hover {
