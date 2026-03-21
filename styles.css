@@ -4,6 +4,7 @@
     font-family: 'Poppins', miniver;
 }
 
+
 /* Font Styling Google Fonts */
 .poppins-thin {
     font-family: "Poppins", sans-serif;
@@ -131,6 +132,7 @@
 .scroll-text {
     display: inline-block;
     background: chartreuse;
+    color: black;
     padding-left: 100%; /* Starts the text off-screen to the right */
     animation: scroll 25s linear infinite; /* Adjust duration (15s) for speed */
 }
@@ -156,6 +158,11 @@ body {
     padding: 0 auto;
     background: rgb(236, 236, 236);
     font-family: 'Poppins, miniver';
+}
+
+body.dark {
+  background: #121212;
+  color: #e0e0e0;
 }
 
 /* Navbar Styling */
@@ -213,6 +220,22 @@ body {
 
 .navbar-items {
     list-style-type: none;
+}
+
+/* Theme Toggle Dark Mode */
+
+#theme-toggle {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 30px;
+  border: none;
+  background: none;
+}
+
+body.dark #theme-toggle {
+  color: chartreuse;
 }
 
 /* Home page About Section Styling*/
