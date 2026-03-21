@@ -226,12 +226,19 @@ body.dark {
 
 #theme-toggle {
   display: flex;
-  align-items: center;
-  margin: 0 auto;
+  justify-content: center;
   padding: 10px;
   font-size: 30px;
   border: none;
   background: none;
+  margin-top: 0;
+  transition: 0.5s ease;
+}
+
+#theme-toggle:hover {
+  color: chartreuse;
+  background: blue;
+  border-radius: 30px;
 }
 
 body.dark #theme-toggle {
