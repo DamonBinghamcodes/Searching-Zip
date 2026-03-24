@@ -303,6 +303,24 @@ dialog {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+dialog button {
+  color: black;
+  background-color: chartreuse;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  margin: 20px 30px;
+  transition: 0.5s ease;
+  border: 2px solid black;
+}
+
+dialog button:hover {
+  transform: scale(1.1);
+  color: white;
+  background-color: blue;
+  border: 2px solid grey;
+}
+
 dialog::backdrop {
   background: rgba(0, 0, 0, 0.5);
 }
