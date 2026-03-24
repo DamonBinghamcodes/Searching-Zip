@@ -1,60 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Searching Zip - Digital Book Shelf</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-<body>
+  <body>
     <!-- Scrolling Banner -->
-        <div class="scroll-container">
-            <div class="scroll-text">
-                <span>Currently developing this website in between reading Book no.4 'Atomic Habits' by James Clear.</span>
-            </div>
-        </div>
+    <div class="scroll-container">
+      <div class="scroll-text">
+        <span
+          >Currently developing this website in between reading Book no.4
+          'Atomic Habits' by James Clear.</span
+        >
+      </div>
+    </div>
 
-        <!-- Navbar -->
+    <!-- Navbar -->
     <div class="navbar">
-        <img class="navbar-logo" src="public/searching.zip-logo.png" alt="searching zip logo image">
-        <ul class="navbar-menu">
-            <li class="navbar-items"><a href="about.html">About</a></li>
-            <li class="navbar-items"><a href="books.html">Books</a></li>
-            <li class="navbar-items"><a href="#blog">Blog</a></li>
-        </ul>
-        
+      <img
+        class="navbar-logo"
+        src="public/searching.zip-logo.png"
+        alt="searching zip logo image"
+      />
+      <ul class="navbar-menu">
+        <li class="navbar-items"><a href="about.html">About</a></li>
+        <li class="navbar-items"><a href="books.html">Books</a></li>
+        <li class="navbar-items"><a href="#blog">Blog</a></li>
+      </ul>
     </div>
     <div class="navbar theme-toggle">
-    <!-- Theme Toggle Power Button (not formatting properly) -->
-            <button id="theme-toggle"><i class="fa-solid fa-power-off"></i></button> </div>
+      <!-- Theme Toggle Power Button (not formatting properly) -->
+      <button id="theme-toggle"><i class="fa-solid fa-power-off"></i></button>
+    </div>
+
+    <!-- Open Modal -->
+   <div class="modal">
+    <button id="open-modal">Book Club Waitlist</button>
+    <dialog>
+      <h2>Join The Waitlist</h2>
+      <p>I will send an email out when the web application is ready. Then a second email once I have built the IOS and Android app for our doom scrolling machines.</p>
+      <button>Subscribe (**under construction, give me a day or two)</button>
+      <button>Close</button>
+    </dialog>
+   </div>
+
     <main>
+      <!-- Hero section  -->
+      <section class="about">
+        <div class="about-hero">
+          <h2 class="about-title">ABOUT SEARCHING ZIP</h2>
+          <p class="about-description">
+            Searching zip was created with the intention of sharing ones journey
+            in search of gathering information from other human experiences that
+            have come before us.
+          </p>
+          <button class="about-btn">
+            <a href="about.html" target="_blank">Learn More</a>
+          </button>
+        </div>
+      </section>
 
-        <!-- Hero section  -->
-        <section class="about">
-            <div class="about-hero">
-                <h2 class="about-title">ABOUT SEARCHING ZIP</h2>
-                <p class="about-description">Searching zip was created with the intention of sharing ones journey in search of gathering information from other human experiences that have come before us.</p>
-                <button class="about-btn"><a href="about.html" target="_blank">Learn More</a></button>
-            </div>
-        </section>
-
-        <section class="books">
-            <div class="books-hero">
-                <h2 class="books-title">BOOKS I HAVE READ SO FAR</h2>
-                <p class="books-description">While I develop this web and mobile application for you to use, i have collated the books i have read so far and have given my thoughts, the good, the bad and what lessons i have taken from each book.</p>
-                <button class="books-btn"><a href="books.html" target="_blank">My Digital Library</a></button>
-            </div>
-        </section>
+      <section class="books">
+        <div class="books-hero">
+          <h2 class="books-title">BOOKS I HAVE READ SO FAR</h2>
+          <p class="books-description">
+            While I develop this web and mobile application for you to use, i
+            have collated the books i have read so far and have given my
+            thoughts, the good, the bad and what lessons i have taken from each
+            book.
+          </p>
+          <button class="books-btn">
+            <a href="books.html" target="_blank">My Digital Library</a>
+          </button>
+        </div>
+      </section>
     </main>
-</body>
-<footer class="footer-content">
-    <p class="footer-description">&copy; 2026 Powered and Developed by Damon Bingham a [ Creative Index ] project.</p>
-</footer>
-<script src="script.js"></script>
+  </body>
+  <footer class="footer-content">
+    <p class="footer-description">
+      &copy; 2026 Powered and Developed by Damon Bingham a [ Creative Index ]
+      project.
+    </p>
+  </footer>
+  <script src="script.js"></script>
 </html>

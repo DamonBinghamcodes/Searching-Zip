@@ -247,12 +247,64 @@ body.dark {
 
 #theme-toggle:hover {
   color: chartreuse;
-  background: blue;
   border-radius: 30px;
+  transform: scale(1.1);
 }
 
 body.dark #theme-toggle {
   color: chartreuse;
+  transition: 0.5s ease;
+}
+
+body.dark #theme-toggle:hover {
+  color: blue;
+  transform: scale(1.1);
+}
+
+body.dark #open-modal {
+  border: 2px solid white;
+  background: none;
+  color: white;
+  transition: 0.5s ease;
+}
+
+body.dark #open-modal:hover {
+  color: chartreuse;
+  border: 2px solid chartreuse;
+  transform: scale(1.1);
+}
+
+/* Modal Dialog */
+.modal {
+  display: flex;
+  justify-content: center;
+  margin: 12px auto;
+}
+
+#open-modal {
+  padding: .5rem;
+  border: 2px solid black;
+  border-radius: 20px;
+  font-size: 15px;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 500;
+  transition: 0.5s ease;
+}
+
+#open-modal:hover {
+  background: chartreuse;
+  transform: scale(1.1);
+}
+
+dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 /* Home page About Section Styling*/
