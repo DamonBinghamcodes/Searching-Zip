@@ -309,7 +309,7 @@ dialog button {
   border: none;
   border-radius: 20px;
   padding: 6px 12px;
-  margin: 20px 30px;
+  margin: 20px 30px 20px 0px;
   transition: 0.5s ease;
   border: 2px solid black;
 }
