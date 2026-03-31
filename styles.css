@@ -801,7 +801,7 @@ dialog::backdrop {
 .grid-section {
   margin-bottom: 48px;
 }
- 
+
 .legend {
   display: flex;
   gap: 18px;
@@ -809,7 +809,7 @@ dialog::backdrop {
   flex-wrap: wrap;
   font-family: "Helvetica Neue", sans-serif;
 }
- 
+
 .leg {
   display: flex;
   align-items: center;
@@ -817,37 +817,45 @@ dialog::backdrop {
   font-size: 11px;
   color: var(--muted);
 }
- 
+
 .pip {
   width: 8px;
   height: 8px;
   flex-shrink: 0;
 }
- 
+
 .grid-outer {
   overflow-x: auto;
 }
- 
+
+.grid-caption {
+  font-size: 11px;
+  color: var(--faint);
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
 #grid {
   display: grid;
   gap: 2px;
   position: relative;
   margin-left: 30px;
 }
- 
+
 .w {
   aspect-ratio: 1;
   background: var(--dot-future);
 }
- 
+
 .w.past {
   background: var(--dot-past);
 }
- 
+
 .w.now {
   background: var(--dot-now);
 }
- 
+
 .dec-lbl {
   position: absolute;
   left: -28px;

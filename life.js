@@ -338,6 +338,7 @@ function rows(id, data) {
 /* ════════════════════════════════════════════
    Build week grid
 ════════════════════════════════════════════ */
+
 function buildGrid(weeksLived) {
   const el = document.getElementById('grid');
   el.innerHTML = '';
