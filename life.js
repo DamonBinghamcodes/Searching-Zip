@@ -217,7 +217,12 @@ function build(dob) {
   const totalDied  = integrate(DEATHS_M, birthYr, nowYr) * 1e6;
   const everLived  = 108_000_000_000;
 
+  const metSoFar = Math.round(years * (80_000 / LIFESPAN));
+
   rows('st-soc', [
+    ['People you have likely met so far',
+      comma(metSoFar),
+      `the average person meets ~80,000 people over a lifetime`],
     ['World population when you were born',
       fmtPop(popBirth),
       'UN World Population Prospects'],
