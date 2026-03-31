@@ -4,6 +4,40 @@
     font-family: 'Poppins', miniver;
 }
 
+/* ════════════════════════════════════════════
+   CSS Custom Properties (Design Tokens)
+════════════════════════════════════════════ */
+:root {
+  --ink:        #1a1a1a;
+  --muted:      #666666;
+  --faint:      #6f6f6f;
+  --serif:      Georgia, 'Times New Roman', serif;
+  --sans:       'Poppins', sans-serif;
+  --dot-past:   #1e1e1e;
+  --dot-now:    chartreuse;
+  --dot-future: #c8c8c8;
+}
+
+body.dark {
+  --ink:        #e0e0e0;
+  --muted:      #999999;
+  --faint:      #828282;
+  --dot-past:   #cccccc;
+  --dot-now:    chartreuse;
+  --dot-future: #575757;
+}
+
+/* ════════════════════════════════════════════
+   Page Layout (shared centering wrapper)
+════════════════════════════════════════════ */
+.page {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
 
 /* Font Styling Google Fonts */
 .poppins-thin {
@@ -518,6 +552,393 @@ dialog::backdrop {
   font-size: 40px;
   color: blue;
   background: whitesmoke;
+}
+
+/* Life Game Styling */
+/* Steps hidden by default */
+.step {
+  display: none;
+  font-family: "Poppins", sans-serif;
+}
+ 
+/* Step 1 — flex for vertical centering */
+#step1.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  animation: appear 0.4s ease both;
+}
+ 
+/* Step 2 — standard block */
+#step2.active {
+  display: block;
+  animation: appear 0.4s ease both;
+}
+ 
+@keyframes appear {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+ 
+/* ════════════════════════════════════════════
+   Step 1 — Entry screen
+════════════════════════════════════════════ */
+.wordmark {
+  font-size: 30px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: blue;
+  margin-bottom: 48px;
+  font-family: "Helvetica Neue", sans-serif;
+}
+ 
+.entry-h {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 18px;
+  font-family: "Helvetica Neue", sans-serif;
+}
+ 
+.entry-h b {
+  font-style: none;
+  color: var(--muted);
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 300;
+}
+ 
+.entry-p {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 380px;
+  margin-bottom: 52px;
+  line-height: 1.7;
+}
+ 
+.field-label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 500;
+}
+ 
+.field-input {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--faint);
+  color: var(--ink);
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 22px;
+  padding: 8px 0 12px;
+  outline: none;
+  transition: border-color 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+ 
+.field-input:focus {
+  border-color: var(--ink);
+}
+ 
+.field-input::-webkit-calendar-picker-indicator {
+  opacity: 0.3;
+  cursor: pointer;
+}
+ 
+.go-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  padding: 0;
+  transition: color 0.2s;
+}
+ 
+.go-btn:hover:not(:disabled) {
+  color: var(--ink);
+}
+ 
+.go-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+ 
+.arrow {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: currentColor;
+  position: relative;
+  transition: width 0.2s;
+}
+ 
+.arrow::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -3px;
+  width: 6px;
+  height: 6px;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  transform: rotate(45deg);
+}
+ 
+.go-btn:hover:not(:disabled) .arrow {
+  width: 44px;
+}
+ 
+.note {
+  margin-top: 64px;
+  font-size: 11px;
+  color: var(--faint);
+  letter-spacing: 0.04em;
+}
+ 
+/* ════════════════════════════════════════════
+   Step 2 — Visualisation
+════════════════════════════════════════════ */
+#step2 {
+  padding-top: 56px;
+  padding-bottom: 88px;
+}
+ 
+.topbar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--faint);
+  gap: 12px;
+  flex-wrap: wrap;
+}
+ 
+.topbar-h {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+ 
+.topbar-h span {
+  color: var(--muted);
+  font-style: italic;
+}
+ 
+.back {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+  white-space: nowrap;
+  font-family: "Helvetica Neue", sans-serif;
+}
+ 
+.back:hover {
+  color: var(--ink);
+}
+ 
+.sec-label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+  font-family: "Helvetica Neue", sans-serif;
+}
+ 
+/* ── Grid ── */
+.grid-section {
+  margin-bottom: 48px;
+}
+ 
+.legend {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  font-family: "Helvetica Neue", sans-serif;
+}
+ 
+.leg {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  color: var(--muted);
+}
+ 
+.pip {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+}
+ 
+.grid-outer {
+  overflow-x: auto;
+}
+ 
+#grid {
+  display: grid;
+  gap: 2px;
+  position: relative;
+  margin-left: 30px;
+}
+ 
+.w {
+  aspect-ratio: 1;
+  background: var(--dot-future);
+}
+ 
+.w.past {
+  background: var(--dot-past);
+}
+ 
+.w.now {
+  background: var(--dot-now);
+}
+ 
+.dec-lbl {
+  position: absolute;
+  left: -28px;
+  font-size: 9px;
+  color: var(--faint);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  user-select: none;
+}
+ 
+/* ── Progress ── */
+.prog-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+ 
+.prog-track {
+  flex: 1;
+  height: 1px;
+  background: var(--faint);
+  position: relative;
+  overflow: hidden;
+}
+ 
+.prog-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--dot-now);
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 0;
+}
+ 
+.prog-pct {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 17px;
+  color: var(--muted);
+  white-space: nowrap;
+  min-width: 42px;
+  text-align: right;
+}
+ 
+/* ── Stats ── */
+.stats-section {
+  margin-bottom: 16px;
+}
+ 
+.stat-group {
+  margin-bottom: 44px;
+}
+ 
+.stat-list {
+  list-style: none;
+}
+ 
+.stat-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--faint);
+  font-size: 14px;
+}
+ 
+.stat-list li:first-child {
+  border-top: 1px solid var(--faint);
+}
+ 
+.s-name {
+  color: var(--muted);
+  max-width: 58%;
+  line-height: 1.45;
+}
+ 
+.s-val {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  text-align: right;
+  flex-shrink: 0;
+}
+ 
+.s-sub {
+  font-size: 11px;
+  color: var(--faint);
+  display: block;
+  text-align: right;
+  margin-top: 2px;
+  line-height: 1.4;
+}
+ 
+/* ════════════════════════════════════════════
+   Mobile
+════════════════════════════════════════════ */
+@media (max-width: 520px) {
+  .stat-list li {
+    flex-direction: column;
+    gap: 4px;
+  }
+ 
+  .s-name {
+    max-width: 100%;
+  }
+ 
+  .s-val {
+    text-align: left;
+    font-size: 20px;
+  }
+ 
+  .s-sub {
+    text-align: left;
+  }
 }
 
 /* Footer */

@@ -1,21 +1,25 @@
-//Theme Toggle
-document.getElementById('theme-toggle').addEventListener('click', () => {
+// Theme Toggle
+const themeToggleBtn = document.getElementById('theme-toggle');
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark');
   });
+}
 
-  // Modal Dialog
-  const dialog = document.querySelector('dialog');
+// Modal Dialog
+const dialog = document.querySelector('dialog');
+const openModalButton = document.getElementById('open-modal');
+if (dialog && openModalButton) {
   const closeButton = dialog.querySelector('button:last-of-type');
-  const openModalButton = document.getElementById('open-modal');
-  
+
   closeButton.addEventListener('click', () => {
     dialog.close();
   });
-  
+
   openModalButton.addEventListener('click', () => {
     dialog.showModal();
   });
-  
+
   // Close the modal when clicking outside of it
   dialog.addEventListener('click', (event) => {
     const rect = dialog.getBoundingClientRect();
@@ -28,4 +32,5 @@ document.getElementById('theme-toggle').addEventListener('click', () => {
     if (!isInDialog) {
       dialog.close();
     }
-  }); 
+  });
+}
