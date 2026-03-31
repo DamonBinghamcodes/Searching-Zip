@@ -75,29 +75,83 @@ function pctOf(part, whole, decimals = 6) {
 /* ════════════════════════════════════════════
    Step wiring
 ════════════════════════════════════════════ */
-const dobEl   = document.getElementById('dob');
+const monthEl = document.getElementById('dob-month');
+const dayEl   = document.getElementById('dob-day');
+const yearEl  = document.getElementById('dob-year');
 const goBtn   = document.getElementById('go-btn');
 const backBtn = document.getElementById('back-btn');
 const s1      = document.getElementById('step1');
 const s2      = document.getElementById('step2');
 
-// Prevent future dates
-dobEl.max = new Date().toISOString().split('T')[0];
+// Populate month options
+const MONTHS = [
+  'January','February','March','April','May','June',
+  'July','August','September','October','November','December'
+];
+MONTHS.forEach((name, i) => {
+  const opt = document.createElement('option');
+  opt.value = i;
+  opt.textContent = name;
+  monthEl.appendChild(opt);
+});
 
-// Enable button when a date is chosen — both events needed for all browsers
-function syncBtn() {
-  goBtn.disabled = !dobEl.value;
+// Populate year options — current year down to 1920
+const currentYear = new Date().getFullYear();
+for (let y = currentYear; y >= 1920; y--) {
+  const opt = document.createElement('option');
+  opt.value = y;
+  opt.textContent = y;
+  yearEl.appendChild(opt);
 }
-dobEl.addEventListener('input', syncBtn);
-dobEl.addEventListener('change', syncBtn);
+
+// Populate day options, respecting the selected month/year
+function updateDays() {
+  const month      = parseInt(monthEl.value);
+  const year       = parseInt(yearEl.value);
+  const prevDay    = dayEl.value;
+
+  // Work out how many days this month has (default 31 if month not yet chosen)
+  const daysInMonth = isNaN(month)
+    ? 31
+    : new Date(isNaN(year) ? 2000 : year, month + 1, 0).getDate();
+
+  dayEl.innerHTML = '<option value="">—</option>';
+  for (let d = 1; d <= daysInMonth; d++) {
+    const opt = document.createElement('option');
+    opt.value = d;
+    opt.textContent = d;
+    dayEl.appendChild(opt);
+  }
+
+  // Restore the previously selected day if it still exists
+  if (prevDay && parseInt(prevDay) <= daysInMonth) {
+    dayEl.value = prevDay;
+  }
+}
+
+updateDays();
+
+// Enable Continue only when all three fields have a value
+function syncBtn() {
+  goBtn.disabled = !monthEl.value || !dayEl.value || !yearEl.value;
+}
+
+[monthEl, dayEl, yearEl].forEach(el => {
+  el.addEventListener('change', () => {
+    if (el === monthEl || el === yearEl) updateDays();
+    syncBtn();
+  });
+});
 
 // Continue → Step 2
 goBtn.addEventListener('click', () => {
-  if (!dobEl.value) return;
+  if (!monthEl.value || !dayEl.value || !yearEl.value) return;
+  const dob = new Date(parseInt(yearEl.value), parseInt(monthEl.value), parseInt(dayEl.value));
+  if (dob > new Date()) return; // reject future dates
   s1.classList.remove('active');
   s2.classList.add('active');
   window.scrollTo(0, 0);
-  build(new Date(dobEl.value + 'T00:00:00'));
+  build(dob);
 });
 
 // Back → Step 1

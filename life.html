@@ -38,11 +38,30 @@
   <div id="step1" class="step active page">
     <p class="wordmark">Life in weeks</p>
     <!--<h1 class="entry-h">Your life,<br><b>distilled to weeks.</b></h1>-->
-    <p class="entry-p">A human life is roughly 4,000 weeks long. Enter your birth date to see exactly where you stand — and to find some perspective.</p> 
+    <p class="entry-p">A human life is roughly 4,000 weeks long. Enter your birth date to see exactly where you stand and to find some perspective.</p> 
  
-    <label class="field-label" for="dob">Enter Your Date of birth</label>
-    <input class="field-input" type="date" id="dob">
- 
+    <label class="field-label">Date of birth</label>
+    <div class="dob-fields">
+      <div class="dob-field">
+        <span class="dob-sublabel">Month</span>
+        <select class="field-select" id="dob-month">
+          <option value="">—</option>
+        </select>
+      </div>
+      <div class="dob-field">
+        <span class="dob-sublabel">Day</span>
+        <select class="field-select" id="dob-day">
+          <option value="">—</option>
+        </select>
+      </div>
+      <div class="dob-field">
+        <span class="dob-sublabel">Year</span>
+        <select class="field-select" id="dob-year">
+          <option value="">—</option>
+        </select>
+      </div>
+    </div>
+
     <button class="go-btn" id="go-btn" disabled>
       <span class="arrow"></span>Continue
     </button>
@@ -60,7 +79,7 @@
  
     <!-- Grid -->
     <div class="grid-section">
-      <p class="sec-label">Your weeks — each square is one week of a 90-year life</p>
+      <p class="sec-label">Each square is one week of a 90-year life</p>
       <div class="legend">
         <div class="leg"><div class="pip" style="background:var(--dot-past)"></div>Weeks lived</div>
         <div class="leg"><div class="pip" style="background:var(--dot-now)"></div>This week</div>
