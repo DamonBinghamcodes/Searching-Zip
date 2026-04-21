@@ -57,13 +57,13 @@
    --sans        → system sans used on the index page
 ============================================== */
 :root {
-  --page-bg:      #f0ece7;       /* hot pink — visible as the frame around the card */
-  --card-bg:      #f0ece7;       /* warm off-white — the main content card background */
+  --page-bg:      #ececec;       /* hot pink — visible as the frame around the card */
+  --card-bg:      #ececec;       /* warm off-white — the main content card background */
   --ink:          #0a0a0a;       /* near-black — primary text colour */
   --muted:        #666666;       /* mid-grey — secondary/label text */
   --faint:        #aaaaaa;       /* light grey — tertiary text and borders */
   --border:       #d0d0d0;       /* light grey — horizontal dividers in list view */
-  --accent:       #0081fb;    /* chartreuse — ticker, hover highlights */
+  --accent:       #ececec;    /* chartreuse — ticker, hover highlights */
   --pill-active:  #0a0a0a;       /* black background for the active pill button */
   --row-hover:    #0a0a0a;       /* black row highlight on hover in list view */
   --sans:         Helvetica, Arial, sans-serif; /* system sans for index page */
