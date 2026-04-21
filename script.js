@@ -61,7 +61,16 @@ const books = [
     isbn:    "9780735211292",  /* Open Library cover lookup key */
     current: true,              /* marks this book as currently being read */
     color:   "#1a0e2c"         /* fallback: dark purple */
-  }
+  },
+  {
+    title:  "Rumi: Selected Poems",
+    author: "Translation by Coleman Barks",
+    year:   2004,
+    genre:  "Fiction",
+    notes:  "Beautiful poetry by the 13th-century Sufi mystic. A timeless exploration of love and spirituality.",
+    isbn:   "9780140449532",   /* Open Library cover lookup key */
+    color:  "#0e2c1a"          /* fallback: dark green */
+  },
 ];
 
 
