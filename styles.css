@@ -1393,23 +1393,22 @@ body {
     padding: 6px;
   }
 
-  /* Header: stack the three columns vertically on mobile */
+  /* Header: keep the three-column grid on mobile so the logo stays
+     on the right and "by" stays centered — only reduce padding and gap */
   .site-header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px 16px 4px;
-    gap: 4px;
+    padding: 16px 12px 4px;
+    gap: 6px;
+    align-items: center;               /* vertically center all three columns */
   }
 
-  /* Right-column name: left-align on mobile since we're stacking */
-  .display-title--right {
-    text-align: left;
-  }
-
-  /* "by" connector: left-align when stacked */
+  /* "by" connector: stays centered in its middle column */
   .site-header__center {
-    text-align: left;
+    text-align: center;
+  }
+
+  /* Logo column: stays right-aligned in its column */
+  .site-header__right {
+    text-align: right;
   }
 
   /* Navigation pills: allow them to wrap to second line if needed */
