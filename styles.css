@@ -1393,21 +1393,39 @@ body {
     padding: 6px;
   }
 
-  /* Header: keep the three-column grid on mobile so the logo stays
-     on the right and "by" stays centered — only reduce padding and gap */
+  /* Header: switch to a two-row layout on mobile so the full title
+     gets its own row at a readable size, then "by" and the logo
+     share the row below — logo stays pinned to the right.
+
+     Grid areas:
+       Row 1:  [ title  title ]   ← spans both columns
+       Row 2:  [ by     logo  ]   ← side by side
+  */
   .site-header {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "title title"
+      "by    logo";
     padding: 16px 12px 4px;
-    gap: 6px;
-    align-items: center;               /* vertically center all three columns */
+    gap: 8px 6px;                      /* row-gap column-gap */
+    align-items: center;
   }
 
-  /* "by" connector: stays centered in its middle column */
+  /* Title spans the full width in row 1 */
+  .site-header__left {
+    grid-area: title;
+  }
+
+  /* "by" sits at the bottom-left in row 2 */
   .site-header__center {
-    text-align: center;
+    grid-area: by;
+    text-align: left;                  /* left-aligned under the title */
   }
 
-  /* Logo column: stays right-aligned in its column */
+  /* Logo stays right-aligned in row 2 */
   .site-header__right {
+    grid-area: logo;
     text-align: right;
   }
 
