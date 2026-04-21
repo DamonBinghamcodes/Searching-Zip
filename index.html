@@ -1,104 +1,246 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Searching Zip - Digital Book Shelf</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Searching Zip — Books I Have Read</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
+  <!-- ================================================
+       STYLESHEET
+       Single stylesheet covers all pages on this site.
+       Sections: index, about, books, life pages.
+  ================================================ -->
+  <link rel="stylesheet" href="styles.css" />
 
-  <body>
-    <!-- Scrolling Banner -->
-    <div class="scroll-container">
-      <div class="scroll-text">
-        <span
-          >Currently developing this website in between reading Book no.4
-          'Atomic Habits' by James Clear.</span
-        >
+  <!-- ================================================
+       GOOGLE FONTS
+       Poppins is used by the Life page (life.html).
+       The main index page uses system Helvetica/Arial.
+  ================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <!-- ================================================
+       TICKER BANNER
+       Full-width scrolling announcement strip.
+       Sits above the card, on the pink background.
+       Text scrolls left on a chartreuse/yellow bar —
+       the animation loops infinitely via CSS keyframes.
+  ================================================ -->
+  <div class="ticker-wrap" aria-label="Site announcement">
+    <div class="ticker-track">
+      <!--
+        Text is duplicated so the scroll is seamless:
+        when the first copy exits left, the second is
+        already entering from the right.
+      -->
+      <span class="ticker-item">
+        Currently reading Book no.4 — Atomic Habits by James Clear
+        &nbsp;&nbsp;•&nbsp;&nbsp;
+        Currently reading Book no.4 — Atomic Habits by James Clear
+        &nbsp;&nbsp;•&nbsp;&nbsp;
+        Currently reading Book no.4 — Atomic Habits by James Clear
+        &nbsp;&nbsp;•&nbsp;&nbsp;
+      </span>
+    </div>
+  </div>
+
+  <!-- ================================================
+       SITE CARD
+       The main off-white content container.
+       Sits inside the pink page background with
+       a visible pink "frame" around all four edges.
+       All site content (header, nav, panels) lives here.
+  ================================================ -->
+  <div class="site-card">
+
+    <!-- ----------------------------------------------
+         SITE HEADER
+         Uses a CSS Grid with three columns:
+           [Left title] [Center "by"] [Right name]
+         The display titles are large bold Helvetica/Arial
+         to create the editorial magazine look from
+         the reference design.
+    ---------------------------------------------- -->
+    <header class="site-header">
+
+      <!-- Left: main page/site title, left-aligned -->
+      <div class="site-header__left">
+        <h1 class="display-title">Books I<br>Have Read</h1>
       </div>
-    </div>
 
-    <!-- Navbar -->
-    <div class="navbar">
-      <img
-        class="navbar-logo"
-        src="public/searching.zip-logo.png"
-        alt="searching zip logo image"
-      />
-      <ul class="navbar-menu">
-        <li class="navbar-items"><a href="about.html">About</a></li>
-        <li class="navbar-items"><a href="books.html">Books</a></li>
-        <li class="navbar-items"><a href="#blog">Blog</a></li>
-        <li class="navbar-items"><a href="life.html">Life</a></li>
-      </ul>
-    </div>
-    <div class="navbar theme-toggle">
-      <!-- Theme Toggle Power Button (not formatting properly) -->
-      <button id="theme-toggle"><i class="fa-solid fa-power-off"></i></button>
-    </div>
+      <!-- Center: small italic "by" connector word -->
+      <div class="site-header__center">
+        <span class="by-connector">by</span>
+      </div>
 
-    <!-- Open Modal -->
-   <div class="modal">
-    <button id="open-modal">Book Club Waitlist</button>
-    <dialog>
-      <h2>Join The Waitlist</h2>
-      <p>I will send an email out when the web application is ready. Then a second email once I have built the IOS and Android app for our doom scrolling machines.</p>
-      <button>Subscribe (**under construction, give me a day or two)</button>
-      <button>Close</button>
-    </dialog>
-   </div>
-
-    <main>
-      <!-- Hero section  -->
-      <section class="about">
-        <div class="about-hero">
-          <h2 class="about-title">ABOUT SEARCHING ZIP</h2>
-          <p class="about-description">
-            Searching zip was created with the intention of sharing ones journey
-            in search of gathering information from other human experiences that
-            have come before us.
-          </p>
-          <button class="about-btn">
-            <a href="about.html" target="_blank">Learn More</a>
-          </button>
+      <!-- Right: logo image + wordmark, right-aligned to mirror the title block -->
+      <div class="site-header__right">
+        <!-- Wrapper groups the logo and wordmark so hover applies to both -->
+        <div class="header-logo-wrap">
+          <img
+            class="header-logo"
+            src="public/searching.zip-logo.png"
+            alt="Searching Zip logo"
+          />
+          <!-- Wordmark displayed beneath the logo image -->
+          <p class="header-wordmark">Searching.Zip</p>
         </div>
-      </section>
+      </div>
 
-      <section class="books">
-        <div class="books-hero">
-          <h2 class="books-title">BOOKS I HAVE READ SO FAR</h2>
-          <p class="books-description">
-            While I develop this web and mobile application for you to use, i
-            have collated the books i have read so far and have given my
-            thoughts, the good, the bad and what lessons i have taken from each
-            book.
-          </p>
-          <button class="books-btn">
-            <a href="books.html" target="_blank">My Digital Library</a>
-          </button>
+    </header>
+
+    <!-- ----------------------------------------------
+         VIEW NAVIGATION
+         Three pill-shaped toggle buttons control
+         which content panel is visible.
+
+         States:
+         • Active pill  → black fill, white text
+         • Inactive pill → transparent, black outline
+
+         The data-view attribute tells script.js which
+         panel to show when each pill is clicked.
+    ---------------------------------------------- -->
+    <nav class="view-nav" aria-label="Page view selector">
+      <!-- List view: default active on page load -->
+      <button class="nav-pill nav-pill--active" data-view="list" aria-pressed="true">List</button>
+      <!-- Grid view: shows book covers in a grid -->
+      <button class="nav-pill" data-view="grid" aria-pressed="false">Grid</button>
+      <!-- About view: editorial about section -->
+      <button class="nav-pill" data-view="about" aria-pressed="false">About</button>
+    </nav>
+
+    <!-- ----------------------------------------------
+         LIST VIEW PANEL  (default: visible)
+         Displays books as a scannable table.
+         Columns: Title | Author | Year | Genre | Notes | [+]
+         The [+] button on each row expands an inline
+         detail row with extra notes.
+
+         Rows are populated dynamically by renderList()
+         in script.js, reading from the books[] data array.
+    ---------------------------------------------- -->
+    <section class="view-panel" id="view-list" aria-label="Books in list format">
+
+      <!-- Column header row: labels only, no data -->
+      <div class="list-header">
+        <span class="list-col list-col--title">Title</span>
+        <span class="list-col list-col--author">Author</span>
+        <span class="list-col list-col--year">Year</span>
+        <span class="list-col list-col--genre">Genre</span>
+        <!-- Notes column hidden on mobile to save space -->
+        <span class="list-col list-col--notes">Notes</span>
+        <!-- Empty spacer column for the [+] expand button -->
+        <span class="list-col list-col--expand"></span>
+      </div>
+
+      <!-- Full-width horizontal rule under the header -->
+      <div class="list-divider" role="separator"></div>
+
+      <!--
+        Book rows are injected here by renderList() in script.js.
+        Each row is a .book-row div with the same 6-column grid
+        as .list-header above, ensuring perfect column alignment.
+      -->
+      <div id="book-list-rows"></div>
+
+    </section>
+
+    <!-- ----------------------------------------------
+         GRID VIEW PANEL  (default: hidden)
+         Shows books as cards in a responsive CSS Grid.
+         Each card has:
+           • A colored cover placeholder block
+           • Book title overlaid on the cover
+           • Title, author, year below the cover
+
+         Cards are populated by renderGrid() in script.js.
+         "hidden" attribute is removed by JS when Grid is clicked.
+    ---------------------------------------------- -->
+    <section class="view-panel" id="view-grid" aria-label="Books in grid format" hidden>
+
+      <!--
+        Grid cards are injected here by renderGrid() in script.js.
+        Grid layout is defined by the .book-grid CSS class:
+        responsive columns that wrap from 4 on desktop to 2 on mobile.
+      -->
+      <div id="book-grid-items" class="book-grid"></div>
+
+    </section>
+
+    <!-- ----------------------------------------------
+         ABOUT VIEW PANEL  (default: hidden)
+         Editorial three-column layout inspired by
+         the reference design's about page:
+           Col 1 → Short greeting  ("Hi")
+           Col 2 → Follow-up      ("How are you?")
+           Col 3 → Project description paragraph
+
+         "hidden" attribute is removed by JS when About is clicked.
+    ---------------------------------------------- -->
+    <section class="view-panel" id="view-about" aria-label="About Searching Zip" hidden>
+
+      <div class="about-layout">
+
+        <!-- Column 1: Brief opening greeting -->
+        <div class="about-col">
+          <p class="about-greeting">Hi</p>
         </div>
-      </section>
-    </main>
-  </body>
-  <footer class="footer-content">
-    <p class="footer-description">
-      &copy; 2026 Powered and Developed by Damon Bingham a [ Creative Index ]
-      project.
+
+        <!-- Column 2: Friendly secondary greeting -->
+        <div class="about-col">
+          <p class="about-question">How are<br>you?</p>
+        </div>
+
+        <!-- Column 3: Full project description and attribution -->
+        <div class="about-col about-col--body">
+          <p class="about-body">
+            Searching Zip started as a personal project to document and share
+            the books that have shaped my thinking. Each title here has been
+            read cover to cover, a semi-curated shelf guided more by curiosity
+            than careful planning. The collection grows as new ideas and
+            experiences resonate.
+          </p>
+          <p class="about-signature">
+            by <span class="about-signature__name">Damon Bingham</span>
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </div><!-- /site-card -->
+
+  <!-- ================================================
+       SITE FOOTER
+       Copyright line centered below the card,
+       sitting on the pink background.
+  ================================================ -->
+  <footer class="site-footer">
+    <p class="site-footer__text">
+      &copy; 2026 Powered and Developed by Damon Bingham
+      — a <strong>[ Creative Index ]</strong> project.
     </p>
   </footer>
+
+  <!-- ================================================
+       SCRIPTS
+       script.js is responsible for:
+         1. books[]      — the book data array (edit here to add books)
+         2. View switching — pill buttons show/hide the three panels
+         3. renderList() — builds list rows from books[]
+         4. renderGrid() — builds grid cards from books[]
+  ================================================ -->
   <script src="script.js"></script>
+
+</body>
 </html>
